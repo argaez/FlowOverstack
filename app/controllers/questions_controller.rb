@@ -35,8 +35,8 @@ class QuestionsController < ApplicationController
   	@question.user = current_user
 
   		if @question.save 
-  			flash[:notice] = "Question Creado"
-  			redirect_to questions_path, notice: "Question is successfully published"
+  			flash[:success] = "Question Posted"
+  			redirect_to questions_path
   		else
   			render :new
   		end

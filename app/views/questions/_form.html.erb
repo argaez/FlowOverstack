@@ -1,0 +1,22 @@
+<div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <h1>Question</h1>
+            <%= form_for @question do |f| %>
+              <div class="form-group">
+                  <%= f.label :title, "Question Title" %>
+                  <%= f.text_field :title, class: "form-control input-lg", placeholder: "Question Title" %>
+              </div>
+              <div class="form-group">
+                  <%= f.label :content, "Content" %>
+                  <%= f.text_area :content, class: "form-control input-lg", placeholder: "Question Content" %>
+              </div>
+              <div>
+                <%= f.submit "Ask", class: "btn btn-primary btn-lg btn-block" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      

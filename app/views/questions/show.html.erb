@@ -9,4 +9,14 @@
             <% end %>
         </div>
     </div>
+    <br>
+    <h1>Respuestas</h1>
+    <br>
+    <div class="ans-list">
+        <%= render @question.answers.order(created_at: :asc) %>
+    </div>
+    
+    <%= render  "answers/form" %>
+
+    
 </div>

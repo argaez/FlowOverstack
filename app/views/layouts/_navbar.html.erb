@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">FlowOverstack</a>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    <div>
+    <%= link_to "Ingresar", new_user_session_path, class:"btn btn-info" %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-info" %>
+    </div>
+</nav>

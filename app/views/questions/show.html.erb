@@ -9,14 +9,19 @@
             <% end %>
         </div>
     </div>
+    <div>
+        <%= render @question.comments.order(created_at: :asc) %>
+    </div>
+    <%= render "comments/form", commentable: @question %>
     <br>
     <h1>Respuestas</h1>
     <br>
     <div class="ans-list">
-        <p1><%= render @question.answers.order(created_at: :asc) %></p1>
+        <%= render @question.answers.order(created_at: :asc) %>
     </div>
     
-    <%= render  "answers/form" %>
+    
+    <%= render "answers/form" %>
 
     
 </div>

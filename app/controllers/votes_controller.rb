@@ -3,6 +3,19 @@ class VotesController < ApplicationController
         @parent = parent
         @vote = @parent.votes.create(user: current_user)
          
+        redirect_to question_path(@parent.question_id) if @vote.votable_type == "Answer"
+        redirect_to question_path(@parent) if @vote.votable_type == "Question"
+    end
+
+   
+    
+    def destroy
+    
+        @parent = parent
+        @vote = @parent.votes.where(user: current_user).take.try(:destroy)
+
+        redirect_to question_path(@parent.question_id) if @vote.votable_type == "Answer"
+        redirect_to question_path(@parent) if @vote.votable_type == "Question"
     end
     
       private

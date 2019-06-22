@@ -1,8 +1,8 @@
 class VotesController < ApplicationController
     def create
         @parent = parent
-        @vote = @parent.votes.new vote_params
-              
+        @vote = @parent.votes.create(user: current_user)
+         
     end
     
       private

@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
         flash[:error] = 'El comentario no se ha agregado correctamente'
       end
     end
-   
   end
 
   private
@@ -23,7 +22,7 @@ class CommentsController < ApplicationController
     if params[:question_id]
 
       Question.find(params[:question_id])
-      
+
     else
 
       Answer.find(params[:answer_id])

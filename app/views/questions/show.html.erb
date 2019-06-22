@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-sm-12">
             <h1><%= @question.title %></h1>
+            <%= render partial: "votes/vote", locals:{var: @question, path: question_vote_path(@question)} %>
             <p><%= @question.content %></p>
             <% if user_signed_in? && current_user == @question.user %>
                   <%= link_to "Editar", edit_question_path(@question) %>
@@ -13,10 +14,9 @@
     <h1>Respuestas</h1>
     <br>
     <div class="ans-list">
-        <p1><%= render @question.answers.order(created_at: :asc) %></p1>
+        <%= render @question.answers.order(created_at: :asc) %>
     </div>
     
     <%= render  "answers/form" %>
 
-    
 </div>

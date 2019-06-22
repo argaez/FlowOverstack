@@ -1,6 +1,9 @@
 <div id="ans-id-<%= answer.id %>">
     <h1><%= answer.content %></h1>
     <%= render partial: "votes/vote", locals:{var: answer, path: answer_vote_path(answer)} %>
-    <%= link_to "Eliminar", [@question, answer], method: 'delete', remote: true, data: { confirm: "¿Are you sure you want to delete this question?" } %> 
-
+    
+    <% if user_signed_in? && current_user == answer.user %>
+    <%= link_to "Editar", edit_question_path(answer) %>
+    <%= link_to "Eliminar", answer, method: :delete, data: { confirm: "¿are you sure you want to delete this answer?" } %> 
+    <% end %>
 </div>

@@ -20,9 +20,11 @@
     <div class="ans-list">
         <%= render @question.answers.order(created_at: :asc) %>
     </div>
-
+    
     <% if user_signed_in?%>
     <%= render 'answers/form' %>
     <% end %>
+
+
 
 </div>

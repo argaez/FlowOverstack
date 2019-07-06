@@ -10,15 +10,21 @@
             <% end %>
         </div>
     </div>
+    <div class="com-list">
+        <%= render @question.comments.order(created_at: :asc) %>
+    </div>
+    <%= render "comments/form", commentable: @question %>
     <br>
     <h1>Respuestas</h1>
     <br>
     <div class="ans-list">
         <%= render @question.answers.order(created_at: :asc) %>
     </div>
-
+    
     <% if user_signed_in?%>
     <%= render  "answers/form" %>
     <% end %>
+
+
 
 </div>

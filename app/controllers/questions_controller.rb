@@ -5,7 +5,8 @@ class QuestionsController < ApplicationController
 
   def index
 
-    @questions = Question.all.order(id: :desc)
+    #@questions = Question.all.order(id: :desc)
+    @questions = Question.where("title LIKE ? OR content LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
 
   end
 

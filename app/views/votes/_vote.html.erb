@@ -1,0 +1,13 @@
+<% if var.voted_by? current_user %>
+        <%= link_to path, method: :delete do %>
+        <h1><%= var.votes.count %></h1>
+        <% end %>
+
+<% else %>
+        <%= link_to path, method: :post do %>
+        <h1><%= var.votes.count %></h1>
+        <% end %>
+
+<% end %>
+
+
